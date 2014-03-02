@@ -1,0 +1,71 @@
+# VLC media player VLM command batch http://www.videolan.org/vlc/  columns across
+#vlc.exe --vlm-conf=C:\CONFIG-12b.vlm --mosaic-height=864 --mosaic-width=1152 --mosaic-rows=2 --mosaic-cols=6 --mosaic-order=1,2,3,4,5,6,7,8,9,10,11,12 -I dummy
+del all
+
+new channel1 broadcast enabled
+setup channel1 input "udp://@:1401"
+setup channel1 output #duplicate{dst=mosaic-bridge{id=1,height=220,width=260},select=video,dst=bridge-out{id=1},select=audio} 
+setup channel1 option network-caching=1000
+
+new channel2 broadcast enabled
+setup channel2 input "udp://@:1402"
+setup channel2 output #duplicate{dst=mosaic-bridge{id=2,height=220,width=260},select=video,dst=bridge-out{id=2}}
+
+new channel3 broadcast enabled
+setup channel3 input "udp://@:1403"
+setup channel3 output #duplicate{dst=mosaic-bridge{id=3,height=220,width=260},select=video,dst=bridge-out{id=3}}
+
+new channel4 broadcast enabled
+setup channel4 input "udp://@:1404"
+setup channel4 output #duplicate{dst=mosaic-bridge{id=4,height=220,width=260},select=video,dst=bridge-out{id=4}}
+
+new channel5 broadcast enabled
+setup channel5 input "udp://@:1405"
+setup channel5 output #duplicate{dst=mosaic-bridge{id=5,height=220,width=260},select=video,dst=bridge-out{id=5}}
+
+new channel6 broadcast enabled
+setup channel6 input "udp://@:1406"
+setup channel6 output #duplicate{dst=mosaic-bridge{id=6,height=220,width=260},select=video,dst=bridge-out{id=6}}
+
+new channel7 broadcast enabled
+setup channel7 input "udp://@:1407"
+setup channel7 output #duplicate{dst=mosaic-bridge{id=7,height=220,width=260},select=video,dst=bridge-out{id=7}}
+
+new channel8 broadcast enabled
+setup channel8 input "udp://@:1408"
+setup channel8 output #duplicate{dst=mosaic-bridge{id=8,height=220,width=260},select=video,dst=bridge-out{id=8}}
+
+new channel9 broadcast enabled
+setup channel9 input "udp://@:1409"
+setup channel9 output #duplicate{dst=mosaic-bridge{id=9,height=220,width=260},select=video,dst=bridge-out{id=9}}
+
+new channel10 broadcast enabled
+setup channel10 input "udp://@:1410"
+setup channel10 output #duplicate{dst=mosaic-bridge{id=10,height=220,width=260},select=video,dst=bridge-out{id=10}}
+
+new channel11 broadcast enabled
+setup channel11 input "udp://@:1411"
+setup channel11 output #duplicate{dst=mosaic-bridge{id=11,height=220,width=260},select=video,dst=bridge-out{id=11}}
+
+new channel12 broadcast enabled
+setup channel12 input "udp://@:1412"
+setup channel12 output #duplicate{dst=mosaic-bridge{id=12,height=220,width=260},select=video,dst=bridge-out{id=12}}
+
+new background broadcast enabled
+setup background input "file:///C:\Scripts\broadcaster\client\background.jpg"
+setup background option image-duration=-1
+setup background output #transcode{sfilter=mosaic,vcodec=mp4v,vb=512,scale=1}:bridge-in{delay=400,id-offset=100}:display
+
+control background play
+control channel1 play
+control channel2 play
+control channel3 play
+control channel4 play
+control channel5 play
+control channel6 play
+control channel7 play
+control channel8 play
+control channel9 play
+control channel10 play
+control channel11 play
+control channel12 play
