@@ -2,7 +2,7 @@ Created by Dave Dougal v0.01 ddougal2@gmail.com
 
 What is it?  
 ====================
-Allows u to create channels to broadcast your media files over your personal network (no, not the internet). So u could have a movie channel that broadcasts 24/7 movies just like HBO. I set up a few music video channels, some TV channels such as IT crowd seasons 1-4, etc... The programs goal is to make it easy to set up channels and to easily change channels and see a listing of what is on the channels. I used the video mosaic so I can see what is currently on. The mosaic was just meant to get a quick view of what episode is currently playing on that channel or channels. Mosaic is set for 12 video channels. 
+Allows u to create channels to broadcast your media files over your personal network. So u could have a movie channel that broadcasts 24/7 movies just like HBO. I set up a few music video channels, some TV channels such as IT crowd seasons 1-4, etc... The programs goal is to make it easy to set up channels and to easily change channels and see a listing of what is on the channels. I used the video mosaic so I can see what is currently on. The mosaic was just meant to get a quick view of what episode is currently playing on that channel or channels. Mosaic is set for 12 video channels. 
 
 VLC must be installed on the PC you run the configuration on and of course on the client PC to view the media
 Currently only supports Windows at this time
